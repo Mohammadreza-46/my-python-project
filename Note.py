@@ -29,9 +29,10 @@ def create_note():
         'id':len(notes) + 1,
         'title':data['title'],
         'note':data['content']}
+    
 
     notes.append(new_note)
 
     return jsonify({'message':'New note created!','note':new_note}),201
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

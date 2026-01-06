@@ -1,9 +1,7 @@
 from flask import request, jsonify,Flask
 
 app = Flask(__name__)
-notes = [
-    {'id':1,'title':'M','content':'My note'}
-]
+notes = []
 @app.route('/notes',methods=['GET'])
 
 def get_all_notes():
@@ -61,4 +59,5 @@ def delete_note(note_id):
     notes.remove(note)
     return jsonify({'message':'Note deleted!'})
 if __name__ == '__main__':
+
     app.run(debug=True)
